@@ -11,15 +11,15 @@
     $stmt->execute(array($breed));
     return $stmt->fetchAll();
   }
-  function getallbreeds (){
+  function getallbreeds ($input){
     global $conn;
-    $stmt = $conn->prepare('SELECT name FROM breed ORDER BY name ASC');
-    $stmt->execute();
+    $stmt = $conn->prepare('SELECT breed.name FROM breed JOIN specie USING (id_sp) WHERE specie.name= ? ORDER BY name ASC');
+    $stmt->execute($input);
     return $stmt->fetchAll();
   }
-  function getspecies(){
+  function getSpecies(){
     global $conn;
-    $stmt = $conn->prepare('SELECT name FROM species ORDER BY name ASC');
+    $stmt = $conn->prepare('SELECT name FROM specie ORDER BY name ASC');
     $stmt->execute();
     return $stmt->fetchAll();
   }

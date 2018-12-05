@@ -4,7 +4,7 @@
 
     $conn = new PDO('pgsql:host=db.fe.up.pt;dbname=siem1817', 'siem1817', 'lfbBsoMB');
     $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-    $conn->exec('SET search_path TO fritter');
+    $conn->exec('SET search_path TO animalplace');
 
     include_once($BASE_DIR . 'lib/smarty/Smarty.class.php');
     $smarty = new Smarty;

@@ -20,11 +20,11 @@
 	</ul>
 
 
-    <a href="TrabalhoPHP_Vf.pptx" download>
+    <a href="{$BASE_URL}TrabalhoPHP_Vf.pptx" download>
     <img src="{$BASE_URL}img/pp.png" alt="PPT" style="width:10%">
     <a href="{$BASE_URL}animalplace.css" download>
     <img src="{$BASE_URL}img/css.png" alt="CSS" style="width:10%">
-    <a href="trabalhoPHP-1.zip" download>
+    <a href="" download>
     <img src="{$BASE_URL}img/zip.png" alt="ZIP" style="width:8%">
 
 </article>
