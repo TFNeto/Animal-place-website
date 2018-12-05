@@ -13,7 +13,13 @@
   }
   function getallbreeds (){
     global $conn;
-    $stmt = $conn->prepare('SELECT name FROM breed ORDER BY breed.name ASC');
+    $stmt = $conn->prepare('SELECT name FROM breed ORDER BY name ASC');
+    $stmt->execute();
+    return $stmt->fetchAll();
+  }
+  function getspecies(){
+    global $conn;
+    $stmt = $conn->prepare('SELECT name FROM species ORDER BY name ASC');
     $stmt->execute();
     return $stmt->fetchAll();
   }
