@@ -1,17 +1,5 @@
 {include file='common/header.tpl'}
 
-{literal}
-   
-    <script>
-    $(() => {
-        const foo = document.getElementById('specie');
-        document.getElementById('specie').onchange = function() {
-            getallbreeds()
-            $('#breeds').append('<option value="foo">');
-        };
-    });
-    </script>
-{/literal}
 
 
 <form method="POST" action="search.tpl">
