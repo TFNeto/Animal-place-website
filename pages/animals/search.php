@@ -7,7 +7,7 @@
     $species=getSpecies();
 
     $smarty->assign('species',$species);
-    $smarty->display('animals/searchbar.tpl');
+    $smarty->display('animals/search.tpl');
 
 
 ?>
