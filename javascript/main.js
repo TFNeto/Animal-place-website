@@ -10,3 +10,16 @@ $('#specie').change(function() {
         })
     })
 })
+
+$('#search').submit(function(e) {
+    const id_bre = $('#breeds').val()
+
+    e.preventDefault()
+
+    $.getJSON(BASE_URL + "api/animals/get_search.php", {id_bre}, function(animals) {
+        $('#display').html('')
+        $.each(animals, function(_, animal) {
+            $('#display').append('<div><img src="'+animal.picture+'"  alt="'+animal.petname+'"></div>')
+        })
+    })
+})

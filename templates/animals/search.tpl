@@ -1,6 +1,6 @@
 {include file='common/header.tpl'}
 
-<form method="POST" action="">
+<form id="search">
         <select id="specie" placeholder="Spicies..." required>
             <option value="" disabled selected>Select Specie...</option>
             {foreach $species as $specie}
@@ -14,8 +14,8 @@
 </form>
 
 <article id="display">
- 
- 
- 
+    <div id="pic">
+    </div>
 </article>   
+
 {include file='common/footer.tpl'}
