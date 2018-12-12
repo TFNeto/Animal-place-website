@@ -4,7 +4,7 @@
     include_once ($BASE_DIR . 'database/animals.php');
     require_once($BASE_DIR . 'menu/navbar.php');
 
-    $species=getSpecies();
+    $species = getSpecies();
 
     $smarty->assign('species',$species);
     $smarty->display('animals/search.tpl');

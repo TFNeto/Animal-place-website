@@ -5,7 +5,22 @@ body, h1, h2, h3, h4, h5, h6, p, ol, ul {
     margin: 0;
     padding: 0;
     font-weight: normal;
+    background-image: url(../img/background/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: verdana;
   }
 ol, ul {
     list-style: none;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+datalist::-webkit-calendar-picker-indicator{
+    display: none;
+}
+a {
+    text-decoration: none;
 }
