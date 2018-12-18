@@ -23,6 +23,7 @@
   $city     = strip_tags($_POST['city']);
 
   $password=password_hash($password,PASSWORD_BCRYPT);
+  
   createUser($username, $password, $name, $email, $gender, $age, $country, $city, $address);
   header("Location: $BASE_URL");
 ?>
