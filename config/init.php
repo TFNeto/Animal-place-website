@@ -1,5 +1,5 @@
 <?php
-    $BASE_URL = 'https://gnomo.fe.up.pt/~up201402912/trabalhosSiem/PHP2/';
+    $BASE_URL = 'https://gnomo.fe.up.pt/~up201303019/t2/';
     $BASE_DIR = dirname(__DIR__).'/';
 
     $conn = new PDO('pgsql:host=db.fe.up.pt;dbname=siem1817', 'siem1817', 'lfbBsoMB');
