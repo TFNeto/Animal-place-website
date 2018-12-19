@@ -8,15 +8,15 @@
 
   function checkUser($username){ //retorna se ja existe utilizador com este nome
     global $conn;
-    $stmt = $conn->prepare('SELECT username FROM users WHERE username = ?');
-    $stmt = $conn->excute(array($username));
-    return $stmt->fetchAll();
+    $stmt = $conn->prepare('SELECT username FROM users WHERE username = ? ');
+    $stmt->execute( array ($username) );
+    return $stmt->rowCount();
   }
   function checkmail($email){ //retorna se ja existe utilizador com este email
     global $conn;
     $stmt = $conn->prepare('SELECT username FROM users WHERE email = ?');
-    $stmt = $conn->excute(array($email));
-    return $stmt->fetchAll();
+    $stmt->execute( array ($username) );
+    return $stmt->rowCount();
   }
 
 ?>  

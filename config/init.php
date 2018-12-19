@@ -6,8 +6,9 @@
     $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $conn->exec('SET search_path TO animalplace');
-
+    
     include_once($BASE_DIR . 'lib/smarty/Smarty.class.php');
+
     $smarty = new Smarty;
 
     $smarty->assign('BASE_URL', $BASE_URL);

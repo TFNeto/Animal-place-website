@@ -2,7 +2,6 @@
   include_once('../../config/init.php');
   include_once($BASE_DIR .'database/users.php');  
 
-
   $username       = $_POST['username'];
   $password       = $_POST['password'];
   $repeatpassword = $_POST['repeatpassword'];
@@ -25,5 +24,6 @@
   $password=password_hash($password,PASSWORD_BCRYPT);
   
   createUser($username, $password, $name, $email, $gender, $age, $country, $city, $address);
-  header("Location: $BASE_URL");
+  
+  die (header("Location: {$BASE_URL}"));
 ?>
