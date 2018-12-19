@@ -1,7 +1,7 @@
 *, *:before, *:after {
     box-sizing: border-box;
 }
-body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+body, h1, h2, h3, h4, h5, h6, p {
     margin: 0;
     padding: 0;
     font-weight: normal;
@@ -30,3 +30,27 @@ img {
     min-width: 20em;
     min-height: 15em;
 }
+/* Menu */
+ul.mu {
+    background-color: #E48634;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+  }
+  
+  ul.mu > li.log {
+    margin-left: auto;
+  }
+  
+  ul.mu > li.log > p, form {
+    color: #F3F3F3;
+    display: inline-block;
+  }
+  
+  ul.mu > li.menu > a {
+    display: block;
+    color: #F3F3F3;
+    font-size: 21px;
+    font-family: Verdana;
+    padding: 17px;
+  }

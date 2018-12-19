@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     $BASE_URL = 'https://gnomo.fe.up.pt/~up201402912/trabalhosSiem/PHP2/';
     $BASE_DIR = dirname(__DIR__).'/';
 
