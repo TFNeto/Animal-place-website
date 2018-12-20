@@ -1,5 +1,11 @@
 <?php
     session_start();
+    
+    $userLevel = $_SESSION['userLevel'];
+	$isLoggedIn = $_SESSION['userLevel'] == "admin" || $_SESSION['userLevel'] == "user";
+	$isAdmin = $_SESSION['userLevel'] == "admin";
+    $username = $_SESSION['username'];
+    $adminStr = $isAdmin ? "[ADMIN]" : "";
 
     $BASE_URL = 'https://gnomo.fe.up.pt/~up201402912/trabalhosSiem/PHP2/';
     $BASE_DIR = dirname(__DIR__).'/';

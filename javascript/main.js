@@ -23,3 +23,13 @@ $('#search').submit(function(e) {
         })
     })
 })
+
+$('#signin').submit(function(a){
+    
+    const username = $('#username').val()
+    const password = $('#password').val()
+    
+    $.getJSON(BASE_URL + "api/users/signin.php",{username,password},function(success){
+     location.reload(true)
+    })
+})

@@ -27,4 +27,11 @@
     return $stmt->fetchAll();
   }
 
+  function checksign($username){
+    global $conn;
+    $stmt = $conn->prepare('SELECT * FROM users WHERE username = ?');
+    $stmt->execute( array ($username) );
+    return $stmt->fetch();
+  }
+
 ?>  
