@@ -1,17 +1,17 @@
 <nav>
   <ul class="mu">
-    <li class="menu"><a href="home.php">Home</a></li>
-    <li class="menu"><a href="animals.php">Animals</a></li>
-    <li class="menu"><a href="contacts.php">Contacts</a></li>
-    <li class="menu"><a href="search.php">Search</a></li>
-    <li class="menu"><a href="about.php">About Us</a></li>
+    <li class="menu"><a href="<?=$BASE_URL?>/pages/animals/home.php">Home</a></li>
+    <li class="menu"><a href="<?=$BASE_URL?>/pages/animals/animals.php">Animals</a></li>
+    <li class="menu"><a href="<?=$BASE_URL?>/pages/animals/contacts.php">Contacts</a></li>
+    <li class="menu"><a href="<?=$BASE_URL?>/pages/animals/search.php">Search</a></li>
+    <li class="menu"><a href="<?=$BASE_URL?>/pages/animals/about.php">About Us</a></li>
     <?php if ($isLoggedIn) :?>
-      <li class="menu"><a href="myadoption.php">My Adoption</a></li>
+      <li class="menu"><a href="<?=$BASE_URL?>/pages/users/myadoption.php">My Adoption</a></li>
       <?php if ($isAdmin) :?>
-        <li class="menu"><a href="admin.php">Admin</a></li>
+        <li class="menu"><a href="<?=$BASE_URL?>/pages/users/admin.php">Admin</a></li>
       <?php endif; ?>
       <li class="log">
-        <p><?php echo "Welcome, $username $adminStr" ?></p>
+        <p class="welcometext"><?php echo "Welcome, $username $adminStr" ?></p>
         <form action='<?=$BASE_URL?>actions/users/logout.php' method="post">
           <button type="submit" name="out">Logout</button>
         </form>

@@ -26,4 +26,10 @@
     $stmt->execute(array($id_bre));
     return $stmt->fetchAll();
   }
+  function getpet($pet_id){
+    global $conn;
+    $stmt = $conn->prepare('SELECT * FROM pet WHERE pet_id = $ ');
+    $stmt->execute(array($pet_id));
+    return $stmt->fetchAll();
+  }
 ?>

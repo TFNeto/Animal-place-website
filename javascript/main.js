@@ -28,8 +28,33 @@ $('#signin').submit(function(a){
     
     const username = $('#username').val()
     const password = $('#password').val()
+    const status = false;
     
-    $.getJSON(BASE_URL + "api/users/signin.php",{username,password},function(success){
-     location.reload(true)
+    $.getJSON(BASE_URL + "api/users/signin.php",{username,password},function(success){     
+    status=success;
     })
+    if(status){
+        location.reload(true)
+    }
+    if(!status){
+        console.log("failed")
+    }
+    console.log(stauts)
+})
+$('#adoptstatus').click(function (){
+    $.getJSON(BASE_URL + "api/users/get_adoptionstatus.php",function(lista){     
+        $('#myadoption').html('')
+        $('#myadoption').append('<table><tr><th>Pet name</th><th>Status</th></tr>')
+        $('#myadoption').append('</table>')
+    })
+    
+})
+
+$('#adoptlist').click(function (){
+    
+    $.getJSON(BASE_URL + "api/users/get_adoptionlist.php",function(lista){     
+        $('#myadoption').html('')
+        $('#myadoption').append('<table><tr><th>Pet name</th><th>Status</th></tr>')
+    })
+    
 })

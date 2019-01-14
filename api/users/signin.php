@@ -11,13 +11,13 @@
 
   if(password_verify($password, $hashpass )){
     $_SESSION['username']=$username;
-    if($reg[admin] == True) $_SESSION['userLevel']= 'admin';
+    if($reg[admin] == TRUE) $_SESSION['userLevel']= 'admin';
     else $_SESSION['userLevel']= 'user';
-    $success=true;
+    $success=TRUE;
     echo json_encode($success);
   }
   else {
-    $success=false;  
+    $success=FALSE;  
     echo json_encode($success);
   }
 ?>
