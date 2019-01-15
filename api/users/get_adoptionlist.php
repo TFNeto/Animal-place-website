@@ -14,7 +14,7 @@
     echo json_encode($lista);
   }
   else{
-    $lista;
+    $lista=FALSE;
     echo json_encode($lista);
   }  
 ?>

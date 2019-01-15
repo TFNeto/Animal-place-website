@@ -6,12 +6,13 @@
   $password = strip_tags($_GET['password']);
 
   $reg=checksign($username);
-
-  $hashpass=$reg[password];
+  $hashpass=$reg['password'];
+  
 
   if(password_verify($password, $hashpass )){
     $_SESSION['username']=$username;
-    if($reg[admin] == TRUE) $_SESSION['userLevel']= 'admin';
+    $_SESSION['user_id']=$reg['user_id'];
+    if($reg['admin'] == TRUE) $_SESSION['userLevel']= 'admin';
     else $_SESSION['userLevel']= 'user';
     $success=TRUE;
     echo json_encode($success);

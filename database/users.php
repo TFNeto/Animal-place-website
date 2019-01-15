@@ -24,7 +24,7 @@
     global $conn;
     $stmt = $conn->prepare('SELECT * FROM orders JOIN pet using (pet_id)  WHERE user_id = ?');
     $stmt->execute( array ($user_id) );
-    return $stmt->fetchAll();
+    return $stmt->fetch();
   }
 
   function checksign($username){
@@ -34,4 +34,13 @@
     return $stmt->fetch();
   }
 
+  function getadoptionstatus ($user_id){
+    global $conn;
+    $stmt = $conn->prepare('SELECT pet.name AS nome , orders.status AS estado
+                            FROM orders JOIN pet USING (pet_id)
+                            WHERE user_id = ?');
+    $stmt->execute( array ($user_id) );
+    return $stmt->fetchAll();
+  }
+  
  ?>  

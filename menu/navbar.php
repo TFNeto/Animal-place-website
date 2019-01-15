@@ -23,7 +23,7 @@
           <input required type="text" name="u" id="username" placeholder="Username"/>
           <label class="Password" for="pw">Password:</label>
           <input required type="password" name="pw" id="password" placeholder="Password"/>
-          <button type="submit" name="login">Sign In</button>
+          <button type="submit" class="login" name="login">Sign In</button>
         </form>
       </li>
     <?php endif; ?>
