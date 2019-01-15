@@ -1,17 +1,17 @@
 {include file='common/header.tpl'}
 
-<article>
-	<article class="row">
-        <article class="column">
+<div class ="contact">
+	<div class="row">
+        <div class="column">
             <img src="{$BASE_URL}img/joao.jpg" alt="Joao" style="width:45%">
             <figcaption>João Matos<br>up201303019@fe.up.pt</figcaption>
-        </article>
-        <article class="column">
+        </div>
+        <div class="column">
             <img src="{$BASE_URL}img/tiago.jpg" alt="Tiago" style="width:50%">
             <figcaption>Tiago Neto <br>up201402912@fe.up.pt</figcaption>
-        </article>
+        </div>
 
-	</article>
+	</div>
 
 	<p>Login info (username | password)</p>
 	<ul class="b">
@@ -27,7 +27,7 @@
     <a href="" download>
     <img src="{$BASE_URL}img/zip.png" alt="ZIP" style="width:8%">
 
-</article>
+</div>
 
 
 {include file='common/footer.tpl'}
