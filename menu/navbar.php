@@ -1,14 +1,14 @@
 <nav>
   <ul class="mu">
-    <li class="menu"><a href="<?=$BASE_URL?>/pages/animals/home.php">Home</a></li>
-    <li class="menu"><a href="<?=$BASE_URL?>/pages/animals/animals.php">Animals</a></li>
-    <li class="menu"><a href="<?=$BASE_URL?>/pages/animals/contacts.php">Contacts</a></li>
-    <li class="menu"><a href="<?=$BASE_URL?>/pages/animals/search.php">Search</a></li>
-    <li class="menu"><a href="<?=$BASE_URL?>/pages/animals/about.php">About Us</a></li>
+    <li class="menu"><a href="<?=$BASE_URL?>pages/animals/home.php">Home</a></li>
+    <li class="menu"><a href="<?=$BASE_URL?>pages/animals/animals.php">Animals</a></li>
+    <li class="menu"><a href="<?=$BASE_URL?>pages/animals/contacts.php">Contacts</a></li>
+    <li class="menu"><a href="<?=$BASE_URL?>pages/animals/search.php">Search</a></li>
+    <li class="menu"><a href="<?=$BASE_URL?>pages/animals/about.php">About Us</a></li>
     <?php if ($isLoggedIn) :?>
-      <li class="menu"><a href="<?=$BASE_URL?>/pages/users/myadoption.php">My Adoption</a></li>
+      <li class="menu"><a href="<?=$BASE_URL?>pages/users/myadoption.php">My Adoption</a></li>
       <?php if ($isAdmin) :?>
-        <li class="menu"><a href="<?=$BASE_URL?>/pages/users/admin.php">Admin</a></li>
+        <li class="menu"><a href="<?=$BASE_URL?>pages/users/admin.php">Admin</a></li>
       <?php endif; ?>
       <li class="log">
         <p class="welcometext"><?php echo "Welcome, $username $adminStr" ?></p>

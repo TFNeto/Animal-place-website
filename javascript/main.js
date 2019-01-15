@@ -40,28 +40,73 @@ $('.login').click(function(a){
     
 })
 $('#adoptstatus').click(function (a){
-    
+    var html=''
     $.getJSON(BASE_URL + "api/users/get_adoptionstatus.php",function(status){    
         $('#myadoption').html('')
-        $('#myadoption').append('<table><thead><tr><th>Pet name</th><th>Status</th></tr></thead><tbody>')
+        html+='<table><tr><th>Pet name</th><th>Status</th></tr>'
         $.each(status, function(_, stat) {
-            $('#myadoption').append('<tr><td>'+stat.nome+'</td><td>'+stat.estado+'</td></tr>')
+            html+='<tr><td>'+stat.nome+'</td><td>'+stat.estado+'</td></tr>'
         })
-        $('#myadoption').append('</tbody></table>')
+        html+='</table>'
+        $('#myadoption').append(html)
     })
     
 })
 
 $('#adoptlist').click(function (a){
     a.preventDefault()
-    
+    var html=''
     $.getJSON(BASE_URL + "api/users/get_adoptionlist.php",function(lista){     
         $('#myadoption').html('')
-        $('#myadoption').append('<table><tr><th>Pet id</th><th>Pet</th> <th colspan="2">Adopt</th></tr>')
+        html+='<table><tr><th>Pet id</th><th>Pet</th> <th colspan="2">Adopt</th></tr>'
         $.each(lista, function(_, list) {
-            $('#myadoption').append('<tr><td>'+list.pet_id+'</td><td>'+list.pet_id+'</td><td><button name="confirm" value='+list.pet_id+'>Confirm</button> </td><td><button name="cancel" value='+list.pet_id+'>Cancel</button> </td></tr>')
+            html+='<tr><td>'+list.pet_id+'</td><td>'+list.pet_id+'</td><td><button name="confirm" value='+list.pet_id+'>Confirm</button> </td><td><button name="cancel" value='+list.pet_id+'>Cancel</button> </td></tr>'
         })
-        $('#myadoption').append('</table>')
+        html+='</table>'
+        $('#myadoption').append(html)
     })
     
+})
+
+$('#candmanagment').click(function (a){
+    a.preventDefault()
+    var html=''
+    
+    $.getJSON(BASE_URL + "api/users/get_pendingstatus.php",function(status){     
+        $('#myadmin').html('')
+        html+='<table><tr><th>User</th><th>Pet</th> <th colspan="2">Adopt</th></tr>'
+        $.each(status, function(_, stat) {
+            html+='<tr><td>'+stat.name+'</td><td>'+stat.pet+'</td><td><form method="post" action="'+BASE_URL+'api/users/confirmadoption.php"><button name="confirm" class="managementconfirm" value='+stat.order_id+'>Confirm</button></form> </td><td><form method="post" action="'+BASE_URL+'api/users/canceladoption.php"><button name="cancel" class="managementcancel" value='+stat.order_id+'>Cancel</button> </form></td></tr>'
+        })
+        html+='</table>'
+        $('#myadmin').append(html)
+    })
+    
+})
+$('#registeranim').click(function (a){
+    $('#myadmin').html('')
+    var html=''
+    html+='<form class="rform" action="'+BASE_URL+'api/animals/registeranimal.php" method="post">'
+    html+='<label class="lasign" for="name">Name</label>'
+    html+='<input required class="insign" type="text" name="name" id="name" placeholder="Name"><br></br>'
+    html+='<label class="lasign" for="age">Age</label>'
+    html+='<input required class="insign" type="text" name="age" id="age" placeholder="Age (months/years)"><br></br>'
+    html+='<label class="lasign" for="specie">Specie</label>'
+    html+='<select id="specie" placeholder="Spicies..." required>'
+    html+='<option value="" disabled selected>Select Specie...</option></select><br></br>'
+    html+='<label class="lasign" for="breed">Breed</label>'
+    html+='<select id="breeds" placeholder="Breeds" required>'
+    html+='<option value="" disabled selected>Select Breed...</option></select>'
+    html+='<br></br><label class="lasign" for="contact">Contact</label>'
+    html+='<input required class="insign" type="text" name="contact" id="contact" placeholder="Contact">'
+    html+='<label class="lasign" for="picture">Picture</label>'
+    html+='<input required class="insign" type="text" name="picture" id="picture" placeholder="Picture"><br></br>'
+    html+='<button class="signbut" type="submit" name="sign">Register Animal</button>'
+    html+='</form>'
+    $('#myadmin').append(html)
+    $.getJSON(BASE_URL + "api/animals/get_species.php", function(species) {
+        $.each(species, function(_, specie) {
+            $('#specie').append('<option value="' + specie.id_sp + '"> '+ specie.name +'</option>')
+        })
+    })
 })

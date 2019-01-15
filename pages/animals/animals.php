@@ -5,8 +5,13 @@
     require_once($BASE_DIR . 'menu/navbar.php');
   
     
-    $animals = getAllAnimals();
-
+    
+    if($isLoggedIn){
+        $animals = getAllAnimalsLogged($_SESSION['user_id']);
+    }
+    else{
+        $animals = getAllAnimals();
+    }
     $smarty->assign('animals', $animals);
     $smarty->display('animals/animals.tpl');
 ?>
