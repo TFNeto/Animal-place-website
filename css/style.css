@@ -171,9 +171,6 @@ ul.mu {
     margin-top: 4% ;
   }
   
-<<<<<<< HEAD
-  #myadoption, #myadmin{
-=======
   th, td {
     text-align: center;
     padding: 8px;
@@ -183,7 +180,6 @@ ul.mu {
 
   #myadoption > table {
     border-collapse: collapse;
->>>>>>> 3e76b1609cd9812fca060b8217d2509be63ca82f
     width: 50%;
     margin: 0 auto;
   }
@@ -193,8 +189,6 @@ ul.mu {
     padding: 8px;
   }
   
-<<<<<<< HEAD
-=======
   #myadoption > tr:nth-child(even){background-color: #eeeeee}
   #myadoption > tr:nth-child(odd){background-color: #c0c0c0}
   
@@ -203,7 +197,6 @@ ul.mu {
     color: white;
   }
 
->>>>>>> 3e76b1609cd9812fca060b8217d2509be63ca82f
   tr:nth-child(even){background-color: #eeeeee}
   tr:nth-child(odd){background-color: #c0c0c0}
   
@@ -245,13 +238,10 @@ ul.mu {
       position: relative;
       margin:1%;  
       float: left;
-<<<<<<< HEAD
-=======
       max-height: 15em;
       max-width: 20em;
       min-width: 20em;
       min-height: 15em;
->>>>>>> 3e76b1609cd9812fca060b8217d2509be63ca82f
     }
    
     .overlay {
@@ -311,7 +301,6 @@ ul.mu {
         min-width: 20em;
         min-height: 15em;
     }
-<<<<<<< HEAD
     .container{
       display:flex;
       flex-direction: column;
@@ -342,9 +331,3 @@ ul.mu {
       font-size: 1em;
     color:White;
   }
-=======
-.container{
-  display: flex;
-  align-items: center;
-}
->>>>>>> 3e76b1609cd9812fca060b8217d2509be63ca82f
