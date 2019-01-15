@@ -68,4 +68,9 @@
     $stmt->execute(array ($pet_id));
     return $stmt->fetchAll();
   }
- ?>  
+  function confirm ($user_id,$pet_id){
+    global $conn;
+    $stmt = $conn->prepare("INSERT INTO orders (order_id, user_id, pet_id,status)VALUES (DEFAULT, ?, ?, DEFAULT)");
+    $stmt->execute(array($user_id,$pet_id));
+  }
+  ?>  

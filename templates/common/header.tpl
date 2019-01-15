@@ -9,7 +9,6 @@
         <script src="{$BASE_URL}javascript/main.js" defer></script>
     </head>
 <body>
-   <div class="container">  
  
    
 	

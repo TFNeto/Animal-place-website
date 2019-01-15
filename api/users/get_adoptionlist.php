@@ -1,14 +1,16 @@
 <?php 
   include_once ('../../config/init.php');
-  include_once ($BASE_DIR . 'database/users.php');
+  include_once ($BASE_DIR . 'database/animals.php');
 
   
   if(!empty($_SESSION['pet_id'])){
     $num=count($_SESSION['pet_id']);
     $i=0;
+    if(!isset($lista)){
+      $lista=array();
+    }
     while($i<$num){
-      $lista['pet_id']=$_SESSION['pet_id'][$i];
-      $lista['name']=get_pet($_SESSION['pet_id'][$i]);
+      array_push($lista,getpet($_SESSION['pet_id'][$i]));
       $i++;
     }
     echo json_encode($lista);

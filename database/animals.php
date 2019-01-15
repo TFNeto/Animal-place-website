@@ -32,13 +32,15 @@
 
   function getanimalsearch($id_bre) {
     global $conn;
-    $stmt = $conn->prepare('SELECT breed.name as breedname, pet.name as petname, picture FROM pet JOIN breed Using (id_bre) WHERE id_bre = ? ORDER BY petname ASC');
+    $stmt = $conn->prepare('SELECT specie.name AS specie ,pet.name AS name ,breed.name AS breed, pet.age AS age, pet.picture AS picture, pet.pet_id AS pet_id
+                            FROM pet JOIN specie USING (id_sp) JOIN breed USING (id_bre) 
+                            WHERE id_bre = ? ORDER BY name ASC');
     $stmt->execute(array($id_bre));
     return $stmt->fetchAll();
   }
   function getpet($pet_id){
     global $conn;
-    $stmt = $conn->prepare('SELECT * FROM pet WHERE pet_id = $ ');
+    $stmt = $conn->prepare('SELECT * FROM pet WHERE pet_id = ? ');
     $stmt->execute(array($pet_id));
     return $stmt->fetchAll();
   }

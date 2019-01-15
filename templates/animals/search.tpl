@@ -14,7 +14,9 @@
 </form>
 
 <article id="display">
+    <div class="container"> 
     <div id="pic">
+    </div>
     </div>
 </article>   
 

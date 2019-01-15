@@ -19,7 +19,7 @@ $('#search').submit(function(e) {
     $.getJSON(BASE_URL + "api/animals/get_search.php", {id_bre}, function(animals) {
         $('#display').html('')
         $.each(animals, function(_, animal) {
-            $('#display').append('<div><img src="'+animal.picture+'"  alt="'+animal.petname+'"></div>')
+            $('#display').append('<div class="gallery"><img src="'+animal.picture+'"  alt="'+animal.name+'"><div class="overlay"><div class="text"><p> '+animal.name+'</p><p> '+animal.breed+'</p><p> '+animal.age+'</p></div></div></div>')
         })
     })
 })
@@ -29,12 +29,13 @@ $('.login').click(function(a){
     a.preventDefault()
     const username = $('#username').val()
     const password = $('#password').val()
-    
+    $('#logerror').html('')
     $.getJSON(BASE_URL + "api/users/signin.php",{username,password},function(success){     
         if(success){
            location.reload(true)
         }
-        if(!success){//error append
+        if(!success){
+            $('#logerror').append("Fail to Sign In")
         }
     })
     
@@ -60,10 +61,21 @@ $('#adoptlist').click(function (a){
         $('#myadoption').html('')
         html+='<table><tr><th>Pet id</th><th>Pet</th> <th colspan="2">Adopt</th></tr>'
         $.each(lista, function(_, list) {
-            html+='<tr><td>'+list.pet_id+'</td><td>'+list.pet_id+'</td><td><button name="confirm" value='+list.pet_id+'>Confirm</button> </td><td><button name="cancel" value='+list.pet_id+'>Cancel</button> </td></tr>'
+            html+='<tr id='+list[0].pet_id+'><td>'+list[0].pet_id+'</td><td>'+list[0].name+'</td><td><button class="confirm" name="confirm" id='+list[0].pet_id+'>Confirm</button> </td><td><button class="cancel" name="cancel" id='+list[0].pet_id+'>Cancel</button> </td></tr>'
         })
         html+='</table>'
         $('#myadoption').append(html)
+        $('button.confirm').click(function(e){
+            const id=e.target.id
+            $.getJSON(BASE_URL + "api/users/confirm.php",{id},function(lista){    
+
+            })
+        })
+        $('button.cancel').click(function(e){
+            const id=e.target.id
+            $('#'+id).remove()
+        })
+
     })
     
 })
@@ -110,3 +122,11 @@ $('#registeranim').click(function (a){
         })
     })
 })
+
+$('input:button').click(function() {
+    const pet_id = $(this).attr('id')
+    $.getJSON(BASE_URL + "api/animals/get_species.php",{pet}, function(species) {
+
+    })
+})
+

@@ -25,6 +25,7 @@
           <input required type="password" name="pw" id="password" placeholder="Password"/>
           <button type="submit" class="login" name="login">Sign In</button>
         </form>
+        <br> <p id="logerror"></p>
       </li>
     <?php endif; ?>
   </ul>

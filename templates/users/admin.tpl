@@ -1,6 +1,6 @@
 {include file='common/header.tpl'}
 
-<article>
+<article class="choose">
 <button id = "registeranim">Register Aniamal</button>
 <button id = "candmanagment">Candidate Management</button>
 </article>

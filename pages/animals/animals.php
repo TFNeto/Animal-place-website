@@ -12,6 +12,7 @@
     else{
         $animals = getAllAnimals();
     }
+    $smarty->assign('isLoggedIn', $isLoggedIn);
     $smarty->assign('animals', $animals);
     $smarty->display('animals/animals.tpl');
 ?>

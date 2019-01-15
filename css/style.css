@@ -176,11 +176,13 @@ ul.mu {
     padding: 8px;
   }
   
+#myadmin, #myadoption{
+  width: 50%;
+  margin: 2em auto;
+}
 
-
-  #myadoption > table {
+  #myadoption , #myadmin> table {
     border-collapse: collapse;
-    width: 50%;
     margin: 0 auto;
   }
   
@@ -331,3 +333,7 @@ ul.mu {
       font-size: 1em;
     color:White;
   }
+.choose > button{
+  margin: 0.5em auto;
+  text-align: center;
+}
