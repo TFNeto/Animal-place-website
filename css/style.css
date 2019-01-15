@@ -184,7 +184,7 @@ ul.mu {
     padding: 8px;
   }
   
-<<<<<<< HEAD
+
 
   #myadoption > table {
     border-collapse: collapse;
@@ -205,7 +205,7 @@ ul.mu {
     background-color: grey ;
     color: white;
   }
-=======
+
   tr:nth-child(even){background-color: #eeeeee}
   tr:nth-child(odd){background-color: #c0c0c0}
   
@@ -242,17 +242,12 @@ ul.mu {
       position: relative;
       margin:1%;  
       float: left;
-      max-width: 450px;
-      min-width: 449px;
-      max-height: 301px;
-      min-height: 300px;
+      max-height: 15em;
+      max-width: 20em;
+      min-width: 20em;
+      min-height: 15em;
     }
-    .gallery > img {
-      max-width: 450px;
-      min-width: 449px;
-      max-height: 301px;
-      min-height: 300px;
-    }
+   
     .overlay {
       position: absolute;
       display: block;
@@ -310,4 +305,7 @@ ul.mu {
         min-width: 20em;
         min-height: 15em;
     }
->>>>>>> b51245648f503df53e78d1dc1c75cd246babd8c5
+.container{
+  display: flex;
+  align-items: center;
+}
