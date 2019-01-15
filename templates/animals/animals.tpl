@@ -1,15 +1,21 @@
 {include file='common/header.tpl'}
-    
-<section id="animals">
-    <h2>Animals</h2>
+
+<h2>Animals</h2>
+<div class="container">   
     
     {foreach $animals as $animal} 
-   
-    <article class="animal">
-        <p><img src= {$animal.picture} alt='animals'></p>
-    </article>
+        <div class="gallery">
+            <p><img src= {$animal.picture} alt='animals'></p>
+            <div class="overlay">
+			    <div class="text">
+                
+                </div>
+            </div>
+        </div>
     {/foreach}
-
-</section>
     
+</div>
 {include file='common/footer.tpl'}
+
+
+  
