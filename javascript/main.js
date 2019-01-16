@@ -125,7 +125,7 @@ $('#registeranim').click(function (a){
 
 $('input:button').click(function() {
     const pet_id = $(this).attr('id')
-    $.getJSON(BASE_URL + "api/animals/get_species.php",{pet}, function(species) {
+    $.getJSON(BASE_URL + "api/animals/makelist.php",{pet_id}, function(species){ 
 
     })
 })
